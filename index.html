@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Ate Elgen</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+background:linear-gradient(135deg,#1d4ed8,#2563eb,#3b82f6);
+font-family:'Lora',serif;
+}
+
+.card{
+background:white;
+padding:40px;
+max-width:720px;
+width:90%;
+border-radius:14px;
+box-shadow:0 15px 40px rgba(0,0,0,0.15);
+}
+
+h1{
+font-family:'Montserrat',sans-serif;
+color:#1d4ed8;
+font-size:40px;
+margin-bottom:20px;
+}
+
+#message{
+font-size:18px;
+line-height:1.7;
+white-space:pre-line;
+}
+
+.quote{
+margin-top:25px;
+font-style:italic;
+font-size:19px;
+color:#444;
+text-align:center;
+}
+
+.cursor{
+display:inline-block;
+width:2px;
+background:#1d4ed8;
+margin-left:4px;
+animation:blink 1s infinite;
+}
+
+@keyframes blink{
+0%{opacity:1}
+50%{opacity:0}
+100%{opacity:1}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+<h1>ELGEN!</h1>
+<div id="message"></div>
+<div id="quote"></div>
+<span class="cursor"></span>
+</div>
+
+<script>
+
+const mainText = `Graduate ka na LOL, bawal ka na mambully hit mga bata. HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA
+
+Wara bawo ak maisisiring haim, kupal ka kasi. Maaram ak nga maiilob it nim tim kinabuhi ha college. HAHAHAHAHAHAHA pero no joke, damo it na ups and downs tim makakasalamuha didto kun diin ka man, basta ay hingangalimti hi abelle HAHAHHAHA. Tas shempre, kami dama ay hingalimti kay pirme la kami aadi para haiyo.
+
+Sayang kay yana na year la kit nagin close, maraot kasi nim Batasan han grade 11 ka HAHAHAHAHA. Diba ang saya ko, mawawara ka na kasi hit tnhs (joke). Basta pirme hinunumdumi nga yaadi kami pirme and never ever lose yourself in the process.
+
+Damo nga tawo tim makakasalamuha ha college, pag enjoy ay pagpinaki suhay HAHAHA. Ig-enjoy tim kinabuhi kay hit sunod hit college sasampalon ka na hit katotohanan, bang ka magcrashout.
+`;
+
+const quoteText = `"Ayaw wawag-a tim kakupal, sayang kasi."`;
+
+let i = 0;
+const speed = 28;
+
+function typeMain(){
+if(i < mainText.length){
+document.getElementById("message").innerHTML += mainText.charAt(i);
+i++;
+setTimeout(typeMain, speed);
+}else{
+typeQuote();
+}
+}
+
+let q = 0;
+
+function typeQuote(){
+if(q < quoteText.length){
+document.getElementById("quote").innerHTML =
+'<div class="quote">' + quoteText.substring(0,q+1) + '</div>';
+q++;
+setTimeout(typeQuote, 35);
+}
+}
+
+window.onload = typeMain;
+
+</script>
+
+</body>
+</html>
